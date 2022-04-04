@@ -11,7 +11,8 @@ class Solution(object):
             k-=1
         tmp2, tail = head, tmp1
         while tail.next != None:
-            tmp2, tail = tmp2.next, tail.next
+            tmp2 = tmp2.next
+            tail = tail.next
         tmp1.val, tmp2.val = tmp2.val, tmp1.val
         return head
         
