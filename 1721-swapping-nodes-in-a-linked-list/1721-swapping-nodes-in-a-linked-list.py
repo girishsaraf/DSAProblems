@@ -13,6 +13,8 @@ class Solution(object):
         while tail.next != None:
             tmp2 = tmp2.next
             tail = tail.next
-        tmp1.val, tmp2.val = tmp2.val, tmp1.val
+        tmp = tmp2.val
+        tmp2.val = tmp1.val
+        tmp1.val = tmp
         return head
         
