@@ -8,10 +8,10 @@ class Solution(object):
         tmp1 = head
         for i in range(k-1):
             tmp1 = tmp1.next
+            k-=1
         tmp2, tail = head, tmp1
         while tail.next != None:
-            tmp2 = tmp2.next
-            tail = tail.next
+            tmp2, tail = tmp2.next, tail.next
         tmp1.val, tmp2.val = tmp2.val, tmp1.val
         return head
         
