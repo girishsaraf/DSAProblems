@@ -5,16 +5,13 @@
 #         self.next = next
 class Solution(object):
     def swapNodes(self, head, k):
-        tmp1, tmp2 = head, head
-        count = 1
-        while tmp1.next != None:
-            tmp1 = tmp1.next
-            count += 1
         tmp1 = head
         for i in range(k-1):
             tmp1 = tmp1.next
-        for i in range(count-k):
+        tmp2, tail = head, tmp1
+        while tail.next != None:
             tmp2 = tmp2.next
+            tail = tail.next
         tmp1.val, tmp2.val = tmp2.val, tmp1.val
         return head
         
